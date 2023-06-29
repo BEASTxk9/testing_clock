@@ -1,0 +1,131 @@
+:root{
+    --textshadows: black 0px 0px 10px;
+    --boxshadows: black 0px 0px 10px black 0px 0px 10px; /* left and right only */
+    --highlights: white;
+    --app-height: 100%;
+    --headings: 4rem;
+
+
+}
+@media only screen and (max-width: 500px){
+:root{
+    --headings: 3rem;
+}
+}
+
+
+/* html skeleton */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Roboto mono;
+    transition: all 0.3s ease-in-out;
+    scroll-behavior: smooth;
+}
+html{
+    background-color: #171717;
+    overflow-x: none;
+}
+
+header{
+min-height: 100vh;
+}
+main{
+    min-height: 100vh;
+}
+
+
+
+
+/* nav */
+.fixed-top{
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+nav{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    color: white;
+}
+nav a{
+    color: var(--headings);
+    text-shadow: var(--textshadows);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* position */
+nav .nav-right{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 3%;
+}
+nav .nav-left{
+    position: absolute;
+    left: 3%;
+}
+nav .nav-left-left {
+    position: absolute;
+    left: 14%;
+    padding-top: 6px;
+}
+@media only screen and (min-width: 700px){
+    nav .nav-left-left {
+        left: 8%;
+    }
+}
+@media only screen and (min-width: 1020px){
+    nav .nav-left-left {
+        left: 6%;
+    }
+}
+.time0of-day{
+    padding-left: 5px;
+}
+
+/* clock */
+.clock{
+    border: 2px solid white;
+    box-shadow: black 0px 0px 10px;
+    height: 10px;
+    width: 10px;
+    border-radius: 360px;
+    padding: 10px;
+} 
+.hand{
+    height: 2px;
+    width: 13px;
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    background-color: rgba(0, 0, 0, 0.667);
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+    z-index: 5;
+}
+.min-hand{
+    background-color: rgba(105, 105, 105, 0.781);  
+}
+.seconds-hand{
+ background-color: rgba(255, 0, 0, 0.495);
+}
+/* am/pm */
+.time-of-day{
+    color: rgba(255, 255, 255, 0.349);
+    text-shadow: black 0px 0px 10px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10%;
+    left: -50%;
+    z-index: 1;
+    display: none;
+}
